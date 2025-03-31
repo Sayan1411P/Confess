@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message for You</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+        #message-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 70%;
+        }
+        .hidden {
+            display: none;
+        }
+        #fool-message {
+            font-size: 2em;
+            font-weight: bold;
+            color: red;
+        }
+        #heart {
+            font-size: 30px;
+            color: red;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div id="message-box">
+        <h2>Hey, I have something special to tell you... <span id="heart">💝</span></h2>
+        <p>I've been waiting to say this for a long time, and I hope you feel the same way.</p>
+        <button onclick="showFoolMessage()">OPEN</button>
+    </div>
+    
+    <div id="fool-message" class="hidden">APRIL FOOL 😂😜</div>
+    
+    <script>
+        function showFoolMessage() {
+            document.getElementById('message-box').classList.add('hidden');
+            document.getElementById('fool-message').classList.remove('hidden');
+            document.body.style.backgroundColor = 'white';
+        }
+    </script>
+</body>
+</html>
